@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class StateService {
   private store$: BehaviorSubject<string> = new BehaviorSubject<string>('');
-  readonly value$: Observable<string> = this.store$;
+  readonly value$: Observable<string> = this.store$.asObservable();
 
   constructor() { }
 
